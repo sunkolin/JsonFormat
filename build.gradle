@@ -15,6 +15,7 @@ repositories {
 
 group 'com.starfish'
 version '1.0.0'
+sourceCompatibility = 1.8
 
 intellij {
     version = '2020.1'
