@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template
+package com.github.sunlin901203.jsonformat
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
