@@ -6,9 +6,15 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.sunlin901203.jsonformat.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.sunlin901203.jsonformat.services.MyProjectService"/>
-    </extensions>
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <applicationService serviceImplementation="com.starfish.jsonformat.services.MyApplicationService"/>-->
+<!--        <projectService serviceImplementation="com.starfish.jsonformat.services.MyProjectService"/>-->
+<!--    </extensions>-->
+
+    <actions>
+        <action id="HelloAction" class="com.starfish.jsonformat.action.HelloAction" text="Hello" description="Hello">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 
 </idea-plugin>
