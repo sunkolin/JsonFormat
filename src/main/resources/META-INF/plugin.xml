@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.sunlin901203.jsonformat</id>
+    <id>com.starfish.jsonformat</id>
     <name>JsonFormat</name>
     <vendor>sunlin901203</vendor>
 
@@ -11,8 +11,4 @@
         <projectService serviceImplementation="com.github.sunlin901203.jsonformat.services.MyProjectService"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.sunlin901203.jsonformat.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
