@@ -9,7 +9,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!--        <applicationService serviceImplementation="com.starfish.jsonformat.service.MyApplicationService"/>-->
         <!--        <projectService serviceImplementation="com.starfish.jsonformat.service.MyProjectService"/>-->
-        <toolWindow canCloseContents="true" anchor="right" id="JsonFormatToolWindow"
+        <toolWindow canCloseContents="true" anchor="right" id="JsonFormat"
                     factoryClass="com.starfish.jsonformat.JsonFormatToolWindowFactory"/>
     </extensions>
 
