@@ -6,10 +6,12 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-<!--    <extensions defaultExtensionNs="com.intellij">-->
-<!--        <applicationService serviceImplementation="com.starfish.jsonformat.services.MyApplicationService"/>-->
-<!--        <projectService serviceImplementation="com.starfish.jsonformat.services.MyProjectService"/>-->
-<!--    </extensions>-->
+    <extensions defaultExtensionNs="com.intellij">
+        <!--        <applicationService serviceImplementation="com.starfish.jsonformat.service.MyApplicationService"/>-->
+        <!--        <projectService serviceImplementation="com.starfish.jsonformat.service.MyProjectService"/>-->
+        <toolWindow canCloseContents="true" anchor="right" id="JsonFormatToolWindow"
+                    factoryClass="com.starfish.jsonformat.JsonFormatToolWindowFactory"/>
+    </extensions>
 
     <actions>
         <action id="HelloAction" class="com.starfish.jsonformat.action.HelloAction" text="Hello" description="Hello">
