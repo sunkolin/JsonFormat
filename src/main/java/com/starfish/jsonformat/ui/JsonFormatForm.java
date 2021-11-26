@@ -1,10 +1,12 @@
 package com.starfish.jsonformat.ui;
 
+import com.intellij.ui.components.JBTextArea;
+
 import javax.swing.*;
 
 public class JsonFormatForm {
 
-    private JTextArea jsonTextArea;
+    private JBTextArea jsonTextArea;
     private JButton formatJsonButton;
     private JButton copyObjectButton;
     private JButton copyJsonButton;
@@ -12,11 +14,11 @@ public class JsonFormatForm {
     private JPanel mainPanel;
     private JScrollPane scrollPanel;
 
-    public JTextArea getJsonTextArea() {
+    public JBTextArea getJsonTextArea() {
         return jsonTextArea;
     }
 
-    public void setJsonTextArea(JTextArea jsonTextArea) {
+    public void setJsonTextArea(JBTextArea jsonTextArea) {
         this.jsonTextArea = jsonTextArea;
     }
 

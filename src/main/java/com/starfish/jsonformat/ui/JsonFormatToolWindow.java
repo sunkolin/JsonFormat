@@ -52,6 +52,17 @@ public class JsonFormatToolWindow {
         // 格式化
         Object object = JSONUtil.parseObj(text);
         text = JSONUtil.toJsonPrettyStr(object);
+//        jsonTextArea.setFont(new Font());
+        // 设置字体颜色
+        jsonTextArea.setForeground(Color.RED);
+
+        // 设置选中的文本的背景颜色
+        jsonTextArea.setSelectionColor(Color.GREEN);
+        // 设置光标的颜色
+        jsonTextArea.setCaretColor(Color.BLACK);
+
+        // 设置选中的文本的字体颜色
+        jsonTextArea.setSelectedTextColor(Color.BLUE);
 
         // 设置到剪贴板中
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
