@@ -6,7 +6,7 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
-import com.starfish.jsonformat.form.JsonFormatForm;
+import com.starfish.jsonformat.ui.JsonFormatToolWindow;
 import org.jetbrains.annotations.NotNull;
 
 public class JsonFormatToolWindowFactory implements ToolWindowFactory , Condition<Project> {
@@ -19,7 +19,7 @@ public class JsonFormatToolWindowFactory implements ToolWindowFactory , Conditio
 //        Content content = contentFactory.createContent(jsonFormatToolWindow.getContent(), "", false);
 //        toolWindow.getContentManager().addContent(content);
 
-        Content content = contentFactory.createContent(new JsonFormatForm().getMainPanel(), "", false);
+        Content content = contentFactory.createContent(JsonFormatToolWindow.getComponent(), "", false);
         toolWindow.getContentManager().addContent(content);
     }
 

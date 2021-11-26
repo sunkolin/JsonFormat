@@ -1,4 +1,4 @@
-package com.starfish.jsonformat.form;
+package com.starfish.jsonformat.ui;
 
 import javax.swing.*;
 
@@ -67,4 +67,5 @@ public class JsonFormatForm {
     public void setScrollPanel(JScrollPane scrollPanel) {
         this.scrollPanel = scrollPanel;
     }
+
 }

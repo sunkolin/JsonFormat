@@ -1,4 +1,4 @@
-package com.starfish.jsonformat;
+package com.starfish.jsonformat.ui;
 
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.ui.components.JBScrollPane;
