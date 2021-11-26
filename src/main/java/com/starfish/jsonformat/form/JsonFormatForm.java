@@ -3,6 +3,7 @@ package com.starfish.jsonformat.form;
 import javax.swing.*;
 
 public class JsonFormatForm {
+
     private JTextArea jsonTextArea;
     private JButton formatJsonButton;
     private JButton copyObjectButton;
@@ -11,44 +12,44 @@ public class JsonFormatForm {
     private JPanel mainPanel;
     private JScrollPane scrollPanel;
 
-    public JTextArea getTextArea1() {
+    public JTextArea getJsonTextArea() {
         return jsonTextArea;
     }
 
-    public void setTextArea1(JTextArea textArea1) {
-        this.jsonTextArea = textArea1;
+    public void setJsonTextArea(JTextArea jsonTextArea) {
+        this.jsonTextArea = jsonTextArea;
     }
 
-    public JButton get格式化Button() {
+    public JButton getFormatJsonButton() {
         return formatJsonButton;
     }
 
-    public void set格式化Button(JButton 格式化Button) {
-        this.formatJsonButton = 格式化Button;
+    public void setFormatJsonButton(JButton formatJsonButton) {
+        this.formatJsonButton = formatJsonButton;
     }
 
-    public JButton get复制对象Button() {
+    public JButton getCopyObjectButton() {
         return copyObjectButton;
     }
 
-    public void set复制对象Button(JButton 复制对象Button) {
-        this.copyObjectButton = 复制对象Button;
+    public void setCopyObjectButton(JButton copyObjectButton) {
+        this.copyObjectButton = copyObjectButton;
     }
 
-    public JButton get复制Button() {
+    public JButton getCopyJsonButton() {
         return copyJsonButton;
     }
 
-    public void set复制Button(JButton 复制Button) {
-        this.copyJsonButton = 复制Button;
+    public void setCopyJsonButton(JButton copyJsonButton) {
+        this.copyJsonButton = copyJsonButton;
     }
 
-    public JButton get生成对象Button() {
+    public JButton getGenerateObjectButton() {
         return generateObjectButton;
     }
 
-    public void set生成对象Button(JButton 生成对象Button) {
-        this.generateObjectButton = 生成对象Button;
+    public void setGenerateObjectButton(JButton generateObjectButton) {
+        this.generateObjectButton = generateObjectButton;
     }
 
     public JPanel getMainPanel() {
@@ -57,5 +58,13 @@ public class JsonFormatForm {
 
     public void setMainPanel(JPanel mainPanel) {
         this.mainPanel = mainPanel;
+    }
+
+    public JScrollPane getScrollPanel() {
+        return scrollPanel;
+    }
+
+    public void setScrollPanel(JScrollPane scrollPanel) {
+        this.scrollPanel = scrollPanel;
     }
 }
