@@ -1,14 +1,22 @@
 package com.starfish.jsonformat;
 
 import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.ui.components.JBScrollPane;
 
 import javax.swing.*;
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class JsonFormatToolWindow {
 
 //    private JButton hideButton;
+
+    private JPanel panel;
+
+    private JPanel topPanel;
+
+    private JPanel bottomPanel;
 
     private JTextArea json;
 
@@ -20,24 +28,61 @@ public class JsonFormatToolWindow {
 
     private JButton copyModelButton;
 
-    private JLabel datetimeLabel;
-
-    private JPanel myToolWindowContent;
+    private ToolWindow toolWindow;
 
     public JsonFormatToolWindow(ToolWindow toolWindow) {
-
         init();
-
+        int width = toolWindow.getComponent().getWidth();
+        int height = toolWindow.getComponent().getHeight();
 //        hideButton.addActionListener(e -> toolWindow.hide(null));
+        this.toolWindow = toolWindow;
+        System.out.println("toolwindow width=" + width);
+        System.out.println("toolwindow height=" + height);
     }
 
+    /**
+     * 初始化
+     */
     private void init() {
-        datetimeLabel = new JLabel();
-        datetimeLabel.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        this.initTopPanel();
+        this.initBottomPanel();
+        this.initPanel();
+    }
 
-        json = new JTextArea( myToolWindowContent.getHeight() , myToolWindowContent.getWidth());
+    public JPanel getContent() {
+        return panel;
+    }
 
+    public void initPanel() {
+        panel = new JPanel();
+        panel.add(topPanel);
+        panel.add(bottomPanel);
+    }
 
+    /**
+     * 顶部面板
+     */
+    public void initTopPanel() {
+        topPanel = new JPanel();
+
+        json = new JTextArea();
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (dimension.getWidth() / 4);
+        int height = (int) (dimension.getHeight() - 100);
+        Dimension preferredSize = new Dimension(width, height);
+        json.setSize(preferredSize);
+        json.setPreferredSize(preferredSize);
+
+        JBScrollPane scrollPane = new JBScrollPane(json);
+        scrollPane.setVisible(true);
+        topPanel.add(scrollPane);
+    }
+
+    /**
+     * 底部面板
+     */
+    public void initBottomPanel() {
+        bottomPanel = new JPanel();
 
 //        hideButton = new JButton("取消");
         formatJsonButton = new JButton("格式化");
@@ -45,21 +90,10 @@ public class JsonFormatToolWindow {
         generateModelButton = new JButton("生成对象");
         copyModelButton = new JButton("复制对象");
 
-        myToolWindowContent = new JPanel();
-        myToolWindowContent.add(datetimeLabel);
-
-        myToolWindowContent.add(json);
-//        myToolWindowContent.add(hideButton);
-        myToolWindowContent.add(formatJsonButton);
-        myToolWindowContent.add(copyJsonButton);
-        myToolWindowContent.add(generateModelButton);
-        myToolWindowContent.add(copyModelButton);
-
-
-    }
-
-    public JPanel getContent() {
-        return myToolWindowContent;
+        bottomPanel.add(formatJsonButton);
+        bottomPanel.add(copyJsonButton);
+        bottomPanel.add(generateModelButton);
+        bottomPanel.add(copyModelButton);
     }
 
 }
