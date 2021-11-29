@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="dbe98" class="com.intellij.ui.components.JBTextArea" binding="jsonTextArea">
+          <component id="dbe98" class="javax.swing.JTextPane" binding="jsonTextArea">
             <constraints/>
             <properties>
               <text value=""/>
