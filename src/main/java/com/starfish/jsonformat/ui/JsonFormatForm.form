@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="f5a0" class="com.intellij.ui.EditorTextField" binding="jsonTextArea">
+          <component id="f5a0" class="com.intellij.ui.EditorTextField" binding="jsonTextArea" custom-create="true">
             <constraints/>
             <properties/>
           </component>

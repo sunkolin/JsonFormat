@@ -1,6 +1,11 @@
 package com.starfish.jsonformat.ui;
 
+import com.intellij.json.JsonFileType;
+import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.editor.EditorFactory;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.EditorTextField;
+import com.starfish.jsonformat.PluginPlus;
 
 import javax.swing.*;
 
@@ -68,6 +73,11 @@ public class JsonFormatForm {
 
     public void setScrollPanel(JScrollPane scrollPanel) {
         this.scrollPanel = scrollPanel;
+    }
+
+    private void createUIComponents() {
+        Document document = EditorFactory.getInstance().createDocument(StringUtil.convertLineSeparators(""));
+        jsonTextArea = new EditorTextField(document, PluginPlus.PROJECT, JsonFileType.INSTANCE, false, false);
     }
 
 }

@@ -1,16 +1,15 @@
 package com.starfish.jsonformat.ui;
 
-import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.intellij.json.JsonFileType;
-import com.intellij.json.psi.impl.JsonFileImpl;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.EditorFactory;
+import com.intellij.openapi.ui.popup.Balloon;
+import com.intellij.openapi.ui.popup.BalloonBuilder;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.psi.*;
 import com.intellij.ui.EditorTextField;
-import com.starfish.jsonformat.PluginPlus;
+import com.intellij.ui.JBColor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,31 +45,18 @@ public class JsonFormatToolWindow {
         String text = jsonTextArea.getText();
 //        log.info("json={}",text);
 
-        Object object = JSONUtil.parseObj(text);
-        text = JSONUtil.toJsonPrettyStr(object);
+        // 格式化json字符串
+        try {
+            Object object = JSONUtil.parseObj(text);
+            text = JSONUtil.toJsonPrettyStr(object);
+        } catch (Exception e) {
+            showTips("字符串有误");
+        }
 
         //  设置新的文本
-//        jsonTextArea.setText(text);
-//        Document document = EditorFactory.getInstance().createDocument(StringUtil.convertLineSeparators(text));
-//        jsonTextArea.setFileType(JsonFileType.INSTANCE);
-//        jsonTextArea.setVisible(true);
-//        jsonTextArea.setDocument(document);
-//        jsonTextArea.setEnabled(true);
-
-        Editor editor = jsonTextArea.getEditor();
-        PsiFile psiFile = PsiDocumentManager.getInstance(PluginPlus.PROJECT).getPsiFile(editor.getDocument());
-        PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
-        PsiExpressionCodeFragment psiFileFragment = JavaCodeFragmentFactory.getInstance(PluginPlus.PROJECT).createExpressionCodeFragment(text, element, null, true);
-        Document document = PsiDocumentManager.getInstance(PluginPlus.PROJECT).getDocument(psiFileFragment);
+        Document document = EditorFactory.getInstance().createDocument(StringUtil.convertLineSeparators(text));
+        jsonTextArea.setFileType(JsonFileType.INSTANCE);
         jsonTextArea.setDocument(document);
-//        jsonTextArea.setFileType(JsonFileType.INSTANCE);
-
-//        jsonTextArea.setOneLineMode(false);
-//        jsonTextArea.setEnabled(true);
-
-//
-//        EditorTextField editorTextField = new EditorTextField(document, PluginPlus.PROJECT, JsonFileType.INSTANCE,true,true);
-//        jsonFormatForm.setJsonTextArea(editorTextField);
     }
 
     public static void onCopyJson() {
@@ -79,13 +65,30 @@ public class JsonFormatToolWindow {
         String text = jsonTextArea.getText();
 
         // 格式化，hutool
-        JSONObject object = JSONUtil.parseObj(text);
-        text = JSONUtil.toJsonPrettyStr(object);
+        try {
+            Object object = JSONUtil.parseObj(text);
+            text = JSONUtil.toJsonPrettyStr(object);
+        } catch (Exception e) {
+            showTips("字符串有误");
+        }
 
         // 设置到剪贴板中
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         Transferable transferable = new StringSelection(text);
         clipboard.setContents(transferable, null);
+    }
+
+    public static void showTips(String message) {
+        JBPopupFactory factory = JBPopupFactory.getInstance();
+        BalloonBuilder builder = factory.createHtmlTextBalloonBuilder(message, null, JBColor.RED, null);
+        //5秒后隐藏
+        //创建气泡
+        //显示在下方
+        builder.setFadeoutTime(3000)
+                .setFillColor(JBColor.RED)
+                .createBalloon()
+                .showInCenterOf(jsonFormatForm.getMainPanel());
+//                .show(factory.guessBestPopupLocation(jsonFormatForm.getMainPanel()), Balloon.Position.below);
     }
 
 }

@@ -4,11 +4,11 @@
   "nextPageToken": "CAIQAA",
   "pageInfo": {
     "totalResults": 1000000,
-    "resultsPe:rPage": 2
+    "resultsPerPage": 2
   },
   "items": [
     {
-      "ki:nd": "youtube#:searchRe:sult{",
+      "kind": "youtube#searchResult",
       "etag": "\"k1sYjErg4tK7WaQQxvJkW5fVrfg/D0nlqgSgFFEQnTduJtwcQZ3Hc78\"",
       "id": {
         "kind": "youtube#video",
