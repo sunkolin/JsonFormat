@@ -1,22 +1,24 @@
 package com.starfish.jsonformat.ui;
 
+import com.intellij.ui.EditorTextField;
+
 import javax.swing.*;
 
 public class JsonFormatForm {
 
-    private JTextPane jsonTextArea;
     private JButton formatJsonButton;
     private JButton copyObjectButton;
     private JButton copyJsonButton;
     private JButton generateObjectButton;
     private JPanel mainPanel;
     private JScrollPane scrollPanel;
+    private EditorTextField jsonTextArea;
 
-    public JTextPane getJsonTextArea() {
+    public EditorTextField getJsonTextArea() {
         return jsonTextArea;
     }
 
-    public void setJsonTextArea(JTextPane jsonTextArea) {
+    public void setJsonTextArea(EditorTextField jsonTextArea) {
         this.jsonTextArea = jsonTextArea;
     }
 

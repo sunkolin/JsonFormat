@@ -15,11 +15,9 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="dbe98" class="javax.swing.JTextPane" binding="jsonTextArea">
+          <component id="f5a0" class="com.intellij.ui.EditorTextField" binding="jsonTextArea">
             <constraints/>
-            <properties>
-              <text value=""/>
-            </properties>
+            <properties/>
           </component>
         </children>
       </scrollpane>
