@@ -55,7 +55,7 @@ public class JsonFormatToolWindow {
             Object object = JSONUtil.parseObj(text);
             text = JSONUtil.toJsonPrettyStr(object);
         } catch (Exception e) {
-            showTips("字符串有误");
+            showError("字符串有误");
         }
 
         //  设置新的文本
@@ -74,7 +74,7 @@ public class JsonFormatToolWindow {
             Object object = JSONUtil.parseObj(text);
             text = JSONUtil.toJsonPrettyStr(object);
         } catch (Exception e) {
-            showTips("字符串有误");
+            showError("字符串有误");
         }
 
         // 设置到剪贴板中
