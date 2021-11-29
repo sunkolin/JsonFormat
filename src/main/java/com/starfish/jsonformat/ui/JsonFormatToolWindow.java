@@ -2,14 +2,17 @@ package com.starfish.jsonformat.ui;
 
 import cn.hutool.json.JSONUtil;
 import com.intellij.json.JsonFileType;
+import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.NotificationGroup;
+import com.intellij.notification.NotificationType;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.EditorFactory;
-import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.BalloonBuilder;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.EditorTextField;
 import com.intellij.ui.JBColor;
+import com.starfish.jsonformat.PluginPlus;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +22,8 @@ import java.awt.datatransfer.Transferable;
 
 //@Slf4j
 public class JsonFormatToolWindow {
+
+    private static final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup("JsonFormatNotificationGroup", NotificationDisplayType.BALLOON, true);
 
     private static JsonFormatForm jsonFormatForm;
 
@@ -88,7 +93,10 @@ public class JsonFormatToolWindow {
                 .setFillColor(JBColor.RED)
                 .createBalloon()
                 .showInCenterOf(jsonFormatForm.getMainPanel());
-//                .show(factory.guessBestPopupLocation(jsonFormatForm.getMainPanel()), Balloon.Position.below);
+    }
+
+    public static void showError(String message) {
+        NOTIFICATION_GROUP.createNotification(message, NotificationType.ERROR).notify(PluginPlus.PROJECT);
     }
 
 }

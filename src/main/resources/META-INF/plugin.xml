@@ -12,6 +12,7 @@
         <!--        <projectService serviceImplementation="com.starfish.jsonformat.service.MyProjectService"/>-->
         <toolWindow canCloseContents="true" anchor="right" doNotActivateOnStart="true" id="JsonFormat"
                     factoryClass="com.starfish.jsonformat.JsonFormatToolWindowFactory"/>
+<!--        <notificationGroup id="Custom Notification Group" displayType="BALLOON" key="notification.group.name"/>-->
     </extensions>
 
     <actions>
