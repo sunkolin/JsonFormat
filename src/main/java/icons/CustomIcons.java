@@ -1,5 +1,6 @@
 package icons;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.util.IconLoader;
 
 import javax.swing.*;
@@ -11,8 +12,11 @@ import javax.swing.*;
  * @version 1.0.0
  * @since 2021-11-30
  */
-public class CustomIcons {
+public interface CustomIcons {
 
-    Icon toolWindowIcon = IconLoader.getIcon("/icons/toolWindowIcon.png", CustomIcons.class);
+    Icon TOOL_WINDOW_ICON = IconLoader.getIcon("/icons/toolWindowIcon.png", CustomIcons.class);
 
+    Icon COLOR_ICON = AllIcons.Actions.Colors;
+
+    Icon JSON_ICON = AllIcons.Toolwindows.ToolWindowJsonPath;
 }
