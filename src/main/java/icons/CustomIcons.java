@@ -19,4 +19,5 @@ public interface CustomIcons {
     Icon COLOR_ICON = AllIcons.Actions.Colors;
 
     Icon JSON_ICON = AllIcons.Toolwindows.ToolWindowJsonPath;
+
 }
