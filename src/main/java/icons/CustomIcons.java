@@ -13,6 +13,6 @@ import javax.swing.*;
  */
 public class CustomIcons {
 
-    Icon toolWindowIcon = IconLoader.getIcon("/icons/toolWindowIcon@13*13.png", CustomIcons.class);
+    Icon toolWindowIcon = IconLoader.getIcon("/icons/toolWindowIcon.png", CustomIcons.class);
 
 }
