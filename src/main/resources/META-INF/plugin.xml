@@ -4,8 +4,6 @@
     <name>JsonFormat</name>
     <vendor>sunlin901203</vendor>
 
-    <idea-version since-build="211.*"/>
-
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
 
