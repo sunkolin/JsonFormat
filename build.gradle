@@ -9,7 +9,7 @@ repositories {
         url "https://oss.sonatype.org/content/repositories/snapshots/"
     }
     maven {
-        url 'https://dl.bintray.com/jetbrains/intellij-plugin-service'
+        url "https://dl.bintray.com/jetbrains/intellij-plugin-service"
     }
 }
 
@@ -24,7 +24,7 @@ intellij {
 }
 
 dependencies {
-    implementation 'cn.hutool:hutool-all:5.7.16'
+    implementation 'cn.hutool:hutool-all:5.7.17'
     implementation 'org.projectlombok:lombok:1.18.22'
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 }
