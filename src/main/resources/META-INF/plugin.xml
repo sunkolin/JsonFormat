@@ -1,8 +1,17 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
+
     <id>com.starfish.jsonformat</id>
     <name>JsonFormat</name>
     <vendor>sunlin901203</vendor>
+
+    <description>
+        <![CDATA[
+        JsonFormat <br/>
+        JsonFormat is a json format tool.
+        ]]>
+    </description>
+    <change-notes>Initial release of the plugin.</change-notes>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
