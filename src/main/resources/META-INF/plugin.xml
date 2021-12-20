@@ -4,7 +4,7 @@
     <id>com.starfish.jsonformat</id>
     <name>JsonFormat</name>
     <vendor>sunlin901203</vendor>
-
+    <idea-version since-build="211"/>
     <description>
         <![CDATA[
         JsonFormat <br/>
