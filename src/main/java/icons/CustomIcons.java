@@ -8,7 +8,7 @@ import javax.swing.*;
 /**
  * CustomIcons
  *
- * @author sunny
+ * @author suncolin
  * @version 1.0.0
  * @since 2021-11-30
  */

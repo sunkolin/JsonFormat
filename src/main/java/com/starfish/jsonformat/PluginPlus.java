@@ -6,7 +6,7 @@ import com.intellij.openapi.wm.ToolWindow;
 /**
  * PluginPlus
  *
- * @author sunny
+ * @author suncolin
  * @version 1.0.0
  * @since 2021-11-29
  */
